@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyr AI - 重新定义智能体时代的安全边界</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* 通用 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a1628 0%, #0d1f35 50%, #0a1420 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(0, 200, 200, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 100, 150, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 4px;
+            z-index: 1;
+            margin-bottom: 80px;
+        }
+
+        .hero-content {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #fff;
+            max-width: 800px;
+            line-height: 1.3;
+            margin-bottom: 60px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: -10%;
+            bottom: -10%;
+            width: 70%;
+            max-width: 900px;
+            opacity: 0.9;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Section 2 - 场景展示 */
+        .section场景 {
+            padding: 120px 60px;
+            background: #f5f5f0;
+        }
+
+        .section场景 .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section场景 h2 {
+            color: #1a1a2e;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .场景-image-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .场景-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Section 3 - 三栏价值主张 */
+        .features {
+            padding: 120px 60px;
+            background: #fff;
+        }
+
+        .features .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Section 4 - 产品特写 */
+        .product-detail {
+            padding: 120px 60px;
+            background: #1a1a1a;
+        }
+
+        .product-detail .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .product-detail-image {
+            flex: 1.2;
+        }
+
+        .product-detail-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-detail-content {
+            flex: 1;
+        }
+
+        .product-detail-content h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .product-detail-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.9;
+        }
+
+        /* Section 5 - 愿景口号 */
+        .vision {
+            padding: 140px 60px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .vision h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #000;
+            letter-spacing: 6px;
+        }
+
+        /* Section 6 - 技术内涵 */
+        .technology {
+            padding: 120px 60px;
+            background: linear-gradient(180deg, #0f1a2e 0%, #0a1420 100%);
+        }
+
+        .technology .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .tech-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .tech-icon {
+            font-size: 4rem;
+            margin-bottom: 35px;
+            display: block;
+        }
+
+        .tech-card h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .tech-card p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Section 7 - 生活场景 */
+        .lifestyle {
+            padding: 120px 60px;
+            background: #f5f5f0;
+        }
+
+        .lifestyle .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .lifestyle h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 50px;
+        }
+
+        .lifestyle-image-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+        }
+
+        .lifestyle-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px;
+            background: #0a0f1a;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 4px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.4rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image {
+                width: 80%;
+                right: -5%;
+            }
+            
+            .features .container,
+            .technology .container,
+            .product-detail .container {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+            
+            .vision h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 30px;
+            }
+            
+            footer .container {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="logo">TYR AI</div>
+        <div class="hero-content">
+            <h1>重新定义智能体时代的安全边界</h1>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-product.jpg" alt="Tyr Product">
+        </div>
+    </section>
+
+    <!-- Section 2 - 场景展示 -->
+    <section class="section场景">
+        <div class="container">
+            <h2>Tyr 打破代理鸿沟</h2>
+            <div class="场景-image-container">
+                <img src="images/scene-office.jpg" alt="Office Scene" class="场景-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 - 三栏价值主张 -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="#1a1a2e" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="25" stroke="#1a1a2e" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="10" fill="#1a1a2e"/>
+                        <path d="M50 10 L50 25 M50 75 L50 90 M10 50 L25 50 M75 50 L90 50" stroke="#1a1a2e" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>隐私与主权</h3>
+                <p>数据主权回归用户，隐私由自己掌控</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="#1a1a2e" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="20" stroke="#1a1a2e" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="5" fill="#1a1a2e"/>
+                        <path d="M50 5 A45 45 0 0 1 95 50" stroke="#1a1a2e" stroke-width="2"/>
+                        <path d="M50 95 A45 45 0 0 1 5 50" stroke="#1a1a2e" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>自主智能体</h3>
+                <p>智能体自主协作，释放无限可能</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="50" r="15" stroke="#1a1a2e" stroke-width="2"/>
+                        <circle cx="70" cy="50" r="15" stroke="#1a1a2e" stroke-width="2"/>
+                        <circle cx="50" cy="30" r="15" stroke="#1a1a2e" stroke-width="2"/>
+                        <circle cx="50" cy="70" r="15" stroke="#1a1a2e" stroke-width="2"/>
+                        <line x1="40" y1="42" x2="60" y2="42" stroke="#1a1a2e" stroke-width="2"/>
+                        <line x1="40" y1="58" x2="60" y2="58" stroke="#1a1a2e" stroke-width="2"/>
+                        <line x1="42" y1="40" x2="42" y2="60" stroke="#1a1a2e" stroke-width="2"/>
+                        <line x1="58" y1="40" x2="58" y2="60" stroke="#1a1a2e" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>共治与去中心化</h3>
+                <p>去中心化架构，实现公平共治</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 - 产品特写 -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-image">
+                <img src="images/product-closeup.jpg" alt="Tyr Product Closeup">
+            </div>
+            <div class="product-detail-content">
+                <h2>Tyr Sovereign Gateway</h2>
+                <p>首款主权网关，为您的智能体提供坚实的安全屏障。通过端到端加密和去中心化架构，确保数据主权回归用户，让每个人都能安全地享受AI带来的便利。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5 - 愿景口号 -->
+    <section class="vision">
+        <h2>终结两大危机，解锁全民红利</h2>
+    </section>
+
+    <!-- Section 6 - 技术内涵 -->
+    <section class="technology">
+        <div class="container">
+            <div class="tech-card">
+                <span class="tech-icon">
+                    <svg viewBox="0 0 100 100" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="#00ffff" stroke-width="2" opacity="0.5"/>
+                        <path d="M50 10 L50 35 M50 65 L50 90 M10 50 L35 50 M65 50 L90 50" stroke="#00ffff" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="30" fill="none" stroke="#00ffff" stroke-width="2"/>
+                        <path d="M50 20 A30 30 0 0 1 80 50" stroke="#00ffff" stroke-width="3"/>
+                        <circle cx="50" cy="50" r="15" fill="#00ffff" opacity="0.8"/>
+                        <rect x="45" y="45" width="10" height="15" fill="#0a1420"/>
+                        <circle cx="50" cy="42" r="4" fill="#00ffff"/>
+                    </svg>
+                </span>
+                <h3>告别"放权即失控"</h3>
+                <p>建立可信任的智能体协作环境</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-icon">
+                    <svg viewBox="0 0 100 100" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="60" width="25" height="40" fill="url(#armGrad)" rx="5"/>
+                        <rect x="25" y="40" width="15" height="25" fill="url(#armGrad)"/>
+                        <circle cx="32" cy="35" r="12" fill="url(#armGrad)"/>
+                        <text x="65" y="60" font-family="Arial" font-size="24" font-weight="bold" fill="#00ffff">TYR</text>
+                        <line x1="32" y1="35" x2="65" y2="55" stroke="#00ffff" stroke-width="2" opacity="0.5"/>
+                        <defs>
+                            <linearGradient id="armGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4a5568"/>
+                                <stop offset="100%" style="stop-color:#2d3748"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <h3>重建数字世界信任</h3>
+                <p>构建透明可追溯的信任机制</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7 - 生活场景 -->
+    <section class="lifestyle">
+        <div class="container">
+            <h2>Tyr · 让智能体时代，人人平等</h2>
+            <div class="lifestyle-image-container">
+                <img src="images/lifestyle.jpg" alt="Lifestyle" class="lifestyle-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <div class="footer-logo">TYR</div>
+                <p class="copyright">© 2024 Tyr AI. All rights reserved.</p>
+            </div>
+            <div class="social-links">
+                <a href="#">𝕏</a>
+                <a href="#">◻</a>
+                <a href="#">in</a>
+                <a href="#">▶</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
