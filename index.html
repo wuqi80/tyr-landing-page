@@ -24,22 +24,20 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 60px;
-            background: rgba(128, 128, 128, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            height: 70px;
+            background: transparent;
             display: flex;
             align-items: center;
-            padding: 0 40px;
+            padding: 0 60px;
             z-index: 1000;
         }
 
-        .logo-small {
-            font-size: 1.2rem;
+        .logo {
+            font-size: 1.5rem;
             font-weight: 700;
             color: #fff;
             letter-spacing: 3px;
-            margin-right: 30px;
+            margin-right: 50px;
         }
 
         .nav-links {
@@ -50,13 +48,14 @@
         .nav-links a {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #00ffff;
+            color: #00d2ff;
         }
 
         /* Hero Section */
@@ -65,12 +64,28 @@
             min-height: 100vh;
             width: 100%;
             overflow: hidden;
+            background: linear-gradient(135deg, #0a1628 0%, #0d1f35 50%, #0a1420 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(0, 200, 200, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 100, 150, 0.1) 0%, transparent 40%);
         }
 
         .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             object-fit: cover;
+            opacity: 0.6;
         }
 
         .hero-overlay {
@@ -79,57 +94,42 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, 
-                rgba(0, 0, 0, 0.3) 0%,
-                rgba(0, 0, 0, 0.1) 50%,
-                rgba(0, 0, 0, 0.5) 100%);
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
-            padding: 100px 60px 60px;
+            padding-top: 70px;
         }
 
         .hero-content {
-            max-width: 800px;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-product {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 40px;
+            display: block;
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            font-weight: 600;
+            font-weight: 700;
             color: #fff;
             line-height: 1.3;
-            margin-bottom: 30px;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-        }
-
-        /* 通用容器 */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
         }
 
         /* Section 2 - 场景展示 */
         .section场景 {
             padding: 120px 60px;
-            background: #f5f5f0;
+            background: #fff;
         }
 
         .section场景 .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -137,14 +137,23 @@
             color: #1a1a2e;
             text-align: center;
             font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section场景 .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 1rem;
             margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .场景-image-container {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+            width            overflow: 100%;
+: hidden;
         }
 
         .场景-image {
@@ -162,20 +171,38 @@
         .features .container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .features h2 {
+            color: #1a1a2e;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .features .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 80px;
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 60px;
         }
 
         .feature-card {
             text-align: center;
-            padding: 50px 30px;
+            padding: 20px;
         }
 
         .feature-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 35px;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -187,14 +214,14 @@
         }
 
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #1a1a2e;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .feature-card p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #666;
             line-height: 1.8;
         }
@@ -214,31 +241,33 @@
         }
 
         .product-detail-image {
-            flex: 1.2;
+            flex: 1;
         }
 
         .product-detail-image img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            display: block;
         }
 
         .product-detail-content {
             flex: 1;
+            text-align: right;
         }
 
         .product-detail-content h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             letter-spacing: 2px;
         }
 
         .product-detail-content p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.9;
+            max-width: 500px;
+            margin-left: auto;
         }
 
         /* Section 5 - 愿景口号 */
@@ -249,10 +278,10 @@
         }
 
         .vision h2 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #000;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
         }
 
         /* Section 6 - 技术内涵 */
@@ -266,33 +295,56 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 60px;
         }
 
         .tech-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 60px 50px;
-            text-align: center;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .tech-card:first-child {
+            align-items: flex-start;
+        }
+
+        .tech-card:last-child {
+            align-items: flex-end;
         }
 
         .tech-icon {
-            font-size: 4rem;
-            margin-bottom: 35px;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
             display: block;
+            align-self: flex-start;
+        }
+
+        .tech-card:last-child .tech-icon {
+            align-self: flex-end;
         }
 
         .tech-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #fff;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+
+        .tech-card:last-child h3 {
+            align-self: flex-end;
         }
 
         .tech-card p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: rgba(255, 255, 255, 0.6);
+            align-self: flex-start;
+        }
+
+        .tech-card:last-child p {
+            align-self: flex-end;
+            text-align: right;
         }
 
         /* Section 7 - 生活场景 */
@@ -302,9 +354,8 @@
         }
 
         .lifestyle .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
         }
 
         .lifestyle h2 {
@@ -312,13 +363,12 @@
             font-weight: 600;
             color: #1a1a2e;
             margin-bottom: 50px;
+            text-align: center;
         }
 
         .lifestyle-image-container {
             width: 100%;
-            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
         }
 
         .lifestyle-image {
@@ -329,7 +379,7 @@
 
         /* Footer */
         footer {
-            padding: 60px;
+            padding: 80px 60px;
             background: #0a0f1a;
         }
 
@@ -338,7 +388,11 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+        }
+
+        .footer-left {
+            flex: 1;
         }
 
         .footer-logo {
@@ -346,27 +400,52 @@
             font-weight: 700;
             color: #fff;
             letter-spacing: 4px;
+            margin-bottom: 15px;
         }
 
-        .copyright {
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-center {
+            flex: 1;
+            text-align: center;
             color: rgba(255, 255, 255, 0.4);
             font-size: 0.85rem;
+            line-height: 2;
+        }
+
+        .footer-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
         }
 
         .social-links {
             display: flex;
-            gap: 25px;
+            gap: 15px;
         }
 
         .social-links a {
             color: rgba(255, 255, 255, 0.5);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             transition: color 0.3s;
             text-decoration: none;
         }
 
         .social-links a:hover {
             color: #00d4ff;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+            text-align: center;
         }
 
         /* 移动端适配 */
@@ -380,30 +459,49 @@
             }
 
             .nav-links a {
-                font-size: 0.85rem;
-            }
-
-            .hero-overlay {
-                padding: 80px 20px 40px;
+                font-size: 0.8rem;
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .features .container,
+            .features-grid,
             .technology .container,
             .product-detail .container {
                 grid-template-columns: 1fr;
                 flex-direction: column;
             }
 
-            .vision h2 {
-                font-size: 2rem;
+            .tech-card,
+            .tech-card:first-child,
+            .tech-card:last-child {
+                align-items: center;
+                text-align: center;
+            }
+
+            .tech-icon,
+            .tech-card:last-child .tech-icon {
+                align-self: center;
+            }
+
+            .tech-card h3,
+            .tech-card:last-child h3 {
+                align-self: center;
+            }
+
+            .tech-card p,
+            .tech-card:last-child p {
+                align-self: center;
+                text-align: center;
+            }
+
+            .product-detail-content {
+                text-align: left;
+            }
+
+            .product-detail-content p {
+                margin-left: 0;
             }
         }
 
@@ -413,9 +511,9 @@
                 padding: 0 15px;
             }
 
-            .logo-small {
-                font-size: 1rem;
-                margin-right: 15px;
+            .logo {
+                font-size: 1.2rem;
+                margin-right: 20px;
             }
 
             .nav-links {
@@ -423,23 +521,25 @@
             }
 
             .nav-links a {
-                font-size: 0.75rem;
-            }
-
-            .hero-overlay {
-                padding: 70px 15px 30px;
+                font-size: 0.7rem;
             }
 
             .hero h1 {
                 font-size: 1.8rem;
+                padding: 0 20px;
             }
 
-            h2 {
-                font-size: 1.8rem;
+            .hero-product {
+                width: 200px;
+                height: 200px;
             }
 
             .container {
                 padding: 0 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
             }
 
             .section场景,
@@ -456,8 +556,13 @@
 
             footer .container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 30px;
+                align-items: center;
                 text-align: center;
+            }
+
+            .footer-right {
+                justify-content: center;
             }
         }
     </style>
@@ -465,23 +570,23 @@
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
-        <div class="logo-small">TYR AI</div>
+        <div class="logo">TYR</div>
         <div class="nav-links">
-            <a href="#">首页</a>
-            <a href="#">功能</a>
-            <a href="#">产品</a>
-            <a href="#">愿景</a>
-            <a href="#">关于</a>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">TECHNOLOGY</a>
+            <a href="#">CONTACT</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-bg"></div>
         <img src="images/hero-product.jpg" alt="Tyr Product" class="hero-image">
         <div class="hero-overlay">
             <div class="hero-content">
+                <img src="images/hero-product.jpg" alt="Tyr" class="hero-product">
                 <h1>重新定义智能体时代的安全边界</h1>
-                <p class="hero-subtitle">Tyr，让智能体时代人人平等</p>
             </div>
         </div>
     </section>
@@ -490,6 +595,7 @@
     <section class="section场景">
         <div class="container">
             <h2>Tyr 打破代理鸿沟</h2>
+            <p class="subtitle">首款主权网关，为您的智能体提供坚实的安全屏障</p>
             <div class="场景-image-container">
                 <img src="images/scene-office.jpg" alt="Office Scene" class="场景-image">
             </div>
@@ -499,46 +605,43 @@
     <!-- Section 3 - 三栏价值主张 -->
     <section class="features">
         <div class="container">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="40" stroke="#1a1a2e" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="25" stroke="#1a1a2e" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="10" fill="#1a1a2e"/>
-                        <path d="M50 10 L50 25 M50 75 L50 90 M10 50 L25 50 M75 50 L90 50" stroke="#1a1a2e" stroke-width="2"/>
-                    </svg>
+            <h2>三大支柱，筑牢安全根基</h2>
+            <p class="subtitle">隐私与主权 · 自主智能体 · 共治与去中心化</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="15" width="60" height="70" rx="5" stroke="#1a1a2e" stroke-width="2"/>
+                            <line x1="35" y1="35" x2="65" y2="35" stroke="#1a1a2e" stroke-width="2"/>
+                            <line x1="35" y1="50" x2="65" y2="50" stroke="#1a1a2e" stroke-width="2"/>
+                            <line x1="35" y1="65" x2="55" y2="65" stroke="#1a1a2e" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>隐私与主权</h3>
+                    <p>数据主权回归用户，隐私由自己掌控</p>
                 </div>
-                <h3>隐私与主权</h3>
-                <p>数据主权回归用户，隐私由自己掌控</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="40" stroke="#1a1a2e" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="20" stroke="#1a1a2e" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="5" fill="#1a1a2e"/>
-                        <path d="M50 5 A45 45 0 0 1 95 50" stroke="#1a1a2e" stroke-width="2"/>
-                        <path d="M50 95 A45 45 0 0 1 5 50" stroke="#1a1a2e" stroke-width="2"/>
-                    </svg>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="35" stroke="#1a1a2e" stroke-width="2"/>
+                            <path d="M50 20 Q65 50 50 80 Q35 50 50 20" stroke="#1a1a2e" stroke-width="2" fill="none"/>
+                            <line x1="50" y1="50" x2="50" y2="80" stroke="#1a1a2e" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>自主智能体</h3>
+                    <p>智能体自主协作，释放无限可能</p>
                 </div>
-                <h3>自主智能体</h3>
-                <p>智能体自主协作，释放无限可能</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="50" r="15" stroke="#1a1a2e" stroke-width="2"/>
-                        <circle cx="70" cy="50" r="15" stroke="#1a1a2e" stroke-width="2"/>
-                        <circle cx="50" cy="30" r="15" stroke="#1a1a2e" stroke-width="2"/>
-                        <circle cx="50" cy="70" r="15" stroke="#1a1a2e" stroke-width="2"/>
-                        <line x1="40" y1="42" x2="60" y2="42" stroke="#1a1a2e" stroke-width="2"/>
-                        <line x1="40" y1="58" x2="60" y2="58" stroke="#1a1a2e" stroke-width="2"/>
-                        <line x1="42" y1="40" x2="42" y2="60" stroke="#1a1a2e" stroke-width="2"/>
-                        <line x1="58" y1="40" x2="58" y2="60" stroke="#1a1a2e" stroke-width="2"/>
-                    </svg>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="35" stroke="#1a1a2e" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="15" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="5" fill="#1a1a2e"/>
+                        </svg>
+                    </div>
+                    <h3>共治与去中心化</h3>
+                    <p>去中心化架构，实现公平共治</p>
                 </div>
-                <h3>共治与去中心化</h3>
-                <p>去中心化架构，实现公平共治</p>
             </div>
         </div>
     </section>
@@ -566,14 +669,12 @@
         <div class="container">
             <div class="tech-card">
                 <span class="tech-icon">
-                    <svg viewBox="0 0 100 100" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="45" stroke="#00ffff" stroke-width="2" opacity="0.5"/>
-                        <path d="M50 10 L50 35 M50 65 L50 90 M10 50 L35 50 M65 50 L90 50" stroke="#00ffff" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="30" fill="none" stroke="#00ffff" stroke-width="2"/>
-                        <path d="M50 20 A30 30 0 0 1 80 50" stroke="#00ffff" stroke-width="3"/>
-                        <circle cx="50" cy="50" r="15" fill="#00ffff" opacity="0.8"/>
-                        <rect x="45" y="45" width="10" height="15" fill="#0a1420"/>
-                        <circle cx="50" cy="42" r="4" fill="#00ffff"/>
+                    <svg viewBox="0 0 100 100" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="#00d2ff" stroke-width="2"/>
+                        <path d="M50 10 L50 35 M50 65 L50 90 M10 50 L35 50 M65 50 L90 50" stroke="#00d2ff" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="25" stroke="#00d2ff" stroke-width="2"/>
+                        <path d="M50 25 L50 40" stroke="#00d2ff" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="10" fill="#00d2ff"/>
                     </svg>
                 </span>
                 <h3>告别"放权即失控"</h3>
@@ -581,18 +682,12 @@
             </div>
             <div class="tech-card">
                 <span class="tech-icon">
-                    <svg viewBox="0 0 100 100" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="60" width="25" height="40" fill="url(#armGrad)" rx="5"/>
-                        <rect x="25" y="40" width="15" height="25" fill="url(#armGrad)"/>
-                        <circle cx="32" cy="35" r="12" fill="url(#armGrad)"/>
-                        <text x="65" y="60" font-family="Arial" font-size="24" font-weight="bold" fill="#00ffff">TYR</text>
-                        <line x1="32" y1="35" x2="65" y2="55" stroke="#00ffff" stroke-width="2" opacity="0.5"/>
-                        <defs>
-                            <linearGradient id="armGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#4a5568"/>
-                                <stop offset="100%" style="stop-color:#2d3748"/>
-                            </linearGradient>
-                        </defs>
+                    <svg viewBox="0 0 100 100" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="55" width="20" height="35" rx="3" fill="#4a5568"/>
+                        <rect x="28" y="40" width="14" height="20" fill="#4a5568"/>
+                        <circle cx="35" cy="35" r="10" fill="#4a5568"/>
+                        <text x="65" y="55" font-family="Arial" font-size="20" font-weight="bold" fill="#00d2ff">TYR</text>
+                        <line x1="35" y1="35" x2="60" y2="50" stroke="#00d2ff" stroke-width="2"/>
                     </svg>
                 </span>
                 <h3>重建数字世界信任</h3>
@@ -614,15 +709,25 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div>
+            <div class="footer-left">
                 <div class="footer-logo">TYR</div>
-                <p class="copyright">© 2024 Tyr AI. All rights reserved.</p>
+                <p class="footer-tagline">重新定义智能体时代的安全边界</p>
             </div>
-            <div class="social-links">
-                <a href="#">𝕏</a>
-                <a href="#">◻</a>
-                <a href="#">in</a>
-                <a href="#">▶</a>
+            <div class="footer-center">
+                2881 New York Avenue<br>
+                New York, NY 10025<br>
+                contact@tyr.ai
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">◻</a>
+                    <a href="#">▶</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 Tyr AI. All rights reserved. Privacy Policy · Terms of Service
             </div>
         </div>
     </footer>
